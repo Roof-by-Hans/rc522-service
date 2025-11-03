@@ -1,0 +1,33 @@
+{
+  "name": "lector-rfid",
+  "version": "0.0.1",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "pm2:start": "pm2 start ecosystem.config.json",
+    "pm2:stop": "pm2 stop servicio-tarjeta",
+    "pm2:restart": "pm2 restart servicio-tarjeta",
+    "pm2:logs": "pm2 logs servicio-tarjeta",
+    "pm2:status": "pm2 status",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@serialport/parser-readline": "^11.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "express": "^4.18.2",
+    "morgan": "^1.10.0",
+    "mysql2": "^3.3.0",
+    "serialport": "^11.0.0",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^4.6.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}

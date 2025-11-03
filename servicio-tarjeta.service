@@ -1,0 +1,22 @@
+[Unit]
+Description=Servicio RFID - Lector de tarjetas
+After=network.target
+
+[Service]
+Type=simple
+User=YOUR_USERNAME
+WorkingDirectory=/path/to/servicio-tarjeta
+Environment="NODE_ENV=production"
+ExecStart=/usr/bin/node src/index.js
+Restart=always
+RestartSec=10
+StandardOutput=append:/var/log/servicio-tarjeta/output.log
+StandardError=append:/var/log/servicio-tarjeta/error.log
+
+# Reiniciar si crashea
+RestartSec=10
+StartLimitInterval=60s
+StartLimitBurst=3
+
+[Install]
+WantedBy=multi-user.target
