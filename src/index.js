@@ -9,8 +9,17 @@ const swaggerUi = require("swagger-ui-express");
 
 const app = express();
 
+// Configuración CORS para permitir solicitudes del frontend
+app.use(
+  cors({
+    origin: "*", // En producción, especificar el dominio del frontend
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+    credentials: true,
+  })
+);
+
 app.use(express.json());
-app.use(cors());
 // app.use(morgan("dev")); // Comentado para evitar logs HTTP innecesarios
 
 // Montar rutas
