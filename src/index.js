@@ -20,7 +20,6 @@ app.use(
 );
 
 app.use(express.json());
-// app.use(morgan("dev")); // Comentado para evitar logs HTTP innecesarios
 
 // Montar rutas
 app.use("/api/rfid", rfidRouter);
